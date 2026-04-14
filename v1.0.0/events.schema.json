@@ -1,0 +1,512 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "#/definitions/EventParamsMap",
+  "definitions": {
+    "EventParamsMap": {
+      "type": "object",
+      "properties": {
+        "page_viewed": {
+          "$ref": "#/definitions/PageViewEventParams"
+        },
+        "form_submitted": {
+          "$ref": "#/definitions/FormSubmitEventParams"
+        },
+        "button_clicked": {
+          "$ref": "#/definitions/ButtonClickEventParams"
+        },
+        "mutation_completed": {
+          "$ref": "#/definitions/MutationEventParams"
+        },
+        "search_submitted": {
+          "$ref": "#/definitions/SearchEventParams"
+        },
+        "filter_cleared": {
+          "$ref": "#/definitions/FilterEventParams"
+        },
+        "sort_changed": {
+          "$ref": "#/definitions/SortEventParams"
+        },
+        "file_downloaded": {
+          "$ref": "#/definitions/FileDownloadEventParams"
+        },
+        "tab_switched": {
+          "$ref": "#/definitions/TabSwitchEventParams"
+        },
+        "drawer_opened": {
+          "$ref": "#/definitions/DrawerEventParams"
+        },
+        "drawer_closed": {
+          "$ref": "#/definitions/DrawerEventParams"
+        },
+        "modal_opened": {
+          "$ref": "#/definitions/ModalEventParams"
+        },
+        "modal_closed": {
+          "$ref": "#/definitions/ModalEventParams"
+        },
+        "bulk_upload_completed": {
+          "$ref": "#/definitions/BulkUploadEventParams"
+        },
+        "page_size_changed": {
+          "$ref": "#/definitions/PaginationEventParams"
+        },
+        "chat_inquiry_started": {
+          "$ref": "#/definitions/ChatInquiryEventParams"
+        },
+        "chat_inquiry_exited": {
+          "$ref": "#/definitions/ChatInquiryEventParams"
+        },
+        "login_succeeded": {
+          "$ref": "#/definitions/AuthEventParams"
+        },
+        "logged_out": {
+          "$ref": "#/definitions/AuthEventParams"
+        }
+      },
+      "required": [
+        "page_viewed",
+        "form_submitted",
+        "button_clicked",
+        "mutation_completed",
+        "search_submitted",
+        "filter_cleared",
+        "sort_changed",
+        "file_downloaded",
+        "tab_switched",
+        "drawer_opened",
+        "drawer_closed",
+        "modal_opened",
+        "modal_closed",
+        "bulk_upload_completed",
+        "page_size_changed",
+        "chat_inquiry_started",
+        "chat_inquiry_exited",
+        "login_succeeded",
+        "logged_out"
+      ],
+      "additionalProperties": false
+    },
+    "PageViewEventParams": {
+      "type": "object",
+      "properties": {
+        "page_id": {
+          "type": "string"
+        },
+        "page_path": {
+          "type": "string"
+        },
+        "page_title": {
+          "type": "string"
+        },
+        "page_location": {
+          "type": "string"
+        },
+        "content_group": {
+          "type": "string"
+        },
+        "entity_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "page_path"
+      ],
+      "additionalProperties": false
+    },
+    "FormSubmitEventParams": {
+      "type": "object",
+      "properties": {
+        "page_id": {
+          "type": "string"
+        },
+        "page_path": {
+          "type": "string"
+        },
+        "page_title": {
+          "type": "string"
+        },
+        "page_location": {
+          "type": "string"
+        },
+        "form_id": {
+          "type": "string"
+        },
+        "form_name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "form_id"
+      ],
+      "additionalProperties": false
+    },
+    "ButtonClickEventParams": {
+      "type": "object",
+      "properties": {
+        "page_id": {
+          "type": "string"
+        },
+        "page_path": {
+          "type": "string"
+        },
+        "page_title": {
+          "type": "string"
+        },
+        "page_location": {
+          "type": "string"
+        },
+        "button_id": {
+          "type": "string"
+        },
+        "button_text": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "button_id"
+      ],
+      "additionalProperties": false
+    },
+    "MutationEventParams": {
+      "type": "object",
+      "properties": {
+        "page_id": {
+          "type": "string"
+        },
+        "page_path": {
+          "type": "string"
+        },
+        "page_title": {
+          "type": "string"
+        },
+        "page_location": {
+          "type": "string"
+        },
+        "mutation_name": {
+          "type": "string"
+        },
+        "mutation_key": {
+          "type": "string"
+        },
+        "mutation_endpoint": {
+          "type": "string"
+        },
+        "success": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "mutation_name",
+        "success"
+      ],
+      "additionalProperties": false
+    },
+    "SearchEventParams": {
+      "type": "object",
+      "properties": {
+        "page_id": {
+          "type": "string"
+        },
+        "page_path": {
+          "type": "string"
+        },
+        "page_title": {
+          "type": "string"
+        },
+        "page_location": {
+          "type": "string"
+        },
+        "search_query": {
+          "type": "string"
+        },
+        "search_type": {
+          "type": "string"
+        },
+        "results_count": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "FilterEventParams": {
+      "type": "object",
+      "properties": {
+        "page_id": {
+          "type": "string"
+        },
+        "page_path": {
+          "type": "string"
+        },
+        "page_title": {
+          "type": "string"
+        },
+        "page_location": {
+          "type": "string"
+        },
+        "filter_type": {
+          "type": "string"
+        },
+        "filter_value": {
+          "type": "string"
+        },
+        "filter_count": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "SortEventParams": {
+      "type": "object",
+      "properties": {
+        "page_id": {
+          "type": "string"
+        },
+        "page_path": {
+          "type": "string"
+        },
+        "page_title": {
+          "type": "string"
+        },
+        "page_location": {
+          "type": "string"
+        },
+        "sort_field": {
+          "type": "string"
+        },
+        "sort_direction": {
+          "type": "string",
+          "enum": [
+            "asc",
+            "desc"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "FileDownloadEventParams": {
+      "type": "object",
+      "properties": {
+        "page_id": {
+          "type": "string"
+        },
+        "page_path": {
+          "type": "string"
+        },
+        "page_title": {
+          "type": "string"
+        },
+        "page_location": {
+          "type": "string"
+        },
+        "file_type": {
+          "type": "string"
+        },
+        "file_name": {
+          "type": "string"
+        },
+        "file_size": {
+          "type": "number"
+        },
+        "download_format": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "TabSwitchEventParams": {
+      "type": "object",
+      "properties": {
+        "page_id": {
+          "type": "string"
+        },
+        "page_path": {
+          "type": "string"
+        },
+        "page_title": {
+          "type": "string"
+        },
+        "page_location": {
+          "type": "string"
+        },
+        "tab_id": {
+          "type": "string"
+        },
+        "tab_name": {
+          "type": "string"
+        },
+        "previous_tab": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "DrawerEventParams": {
+      "type": "object",
+      "properties": {
+        "page_id": {
+          "type": "string"
+        },
+        "page_path": {
+          "type": "string"
+        },
+        "page_title": {
+          "type": "string"
+        },
+        "page_location": {
+          "type": "string"
+        },
+        "drawer_id": {
+          "type": "string"
+        },
+        "drawer_type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ModalEventParams": {
+      "type": "object",
+      "properties": {
+        "page_id": {
+          "type": "string"
+        },
+        "page_path": {
+          "type": "string"
+        },
+        "page_title": {
+          "type": "string"
+        },
+        "page_location": {
+          "type": "string"
+        },
+        "modal_id": {
+          "type": "string"
+        },
+        "modal_title": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "modal_id"
+      ],
+      "additionalProperties": false
+    },
+    "BulkUploadEventParams": {
+      "type": "object",
+      "properties": {
+        "page_id": {
+          "type": "string"
+        },
+        "page_path": {
+          "type": "string"
+        },
+        "page_title": {
+          "type": "string"
+        },
+        "page_location": {
+          "type": "string"
+        },
+        "upload_type": {
+          "type": "string"
+        },
+        "file_count": {
+          "type": "number"
+        },
+        "total_records": {
+          "type": "number"
+        },
+        "success_count": {
+          "type": "number"
+        },
+        "error_count": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "PaginationEventParams": {
+      "type": "object",
+      "properties": {
+        "page_id": {
+          "type": "string"
+        },
+        "page_path": {
+          "type": "string"
+        },
+        "page_title": {
+          "type": "string"
+        },
+        "page_location": {
+          "type": "string"
+        },
+        "page_number": {
+          "type": "number"
+        },
+        "page_size": {
+          "type": "number"
+        },
+        "total_pages": {
+          "type": "number"
+        },
+        "total_items": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ChatInquiryEventParams": {
+      "type": "object",
+      "properties": {
+        "page_id": {
+          "type": "string"
+        },
+        "page_path": {
+          "type": "string"
+        },
+        "page_title": {
+          "type": "string"
+        },
+        "page_location": {
+          "type": "string"
+        },
+        "inquiry_source": {
+          "type": "string"
+        },
+        "had_message": {
+          "type": "boolean"
+        },
+        "exit_type": {
+          "type": "string",
+          "enum": [
+            "minimize",
+            "abandon"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "AuthEventParams": {
+      "type": "object",
+      "properties": {
+        "page_id": {
+          "type": "string"
+        },
+        "page_path": {
+          "type": "string"
+        },
+        "page_title": {
+          "type": "string"
+        },
+        "page_location": {
+          "type": "string"
+        },
+        "method": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "$id": "@repo/analytics/events",
+  "version": "1.0.0"
+}
